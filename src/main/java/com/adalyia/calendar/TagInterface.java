@@ -7,10 +7,12 @@
 package com.adalyia.calendar;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public interface TagInterface
 {
     // Getters for Calendar Tag properties
+    UUID getId();
     String getName();
     String getDescription();
     LocalDateTime getCreated();

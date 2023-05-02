@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="090dacce-75e8-4115-a8c9-ed8cef625da4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/adalyia/calendar/Calendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adalyia/calendar/Calendar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/adalyia/calendar/CalendarInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adalyia/calendar/CalendarInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/adalyia/calendar/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adalyia/calendar/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/adalyia/calendar/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adalyia/calendar/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/adalyia/calendar/EventInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adalyia/calendar/EventInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/adalyia/calendar/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adalyia/calendar/Tag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/adalyia/calendar/TagInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adalyia/calendar/TagInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +33,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2PCcRVrqNVuH4eawinpeU7NvdNd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -40,13 +53,19 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Emily/Documents/Working/Calendar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings"
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Maven.Calendar [package]">
+  <component name="RunManager">
     <configuration name="Calendar-1.0-SNAPSHOT-jar-with-dependencies.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/target/Calendar-1.0-SNAPSHOT-jar-with-dependencies.jar" />
       <method v="2" />
@@ -84,41 +103,17 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
-    <configuration name="Calendar" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list />
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="JAR Application.Calendar-1.0-SNAPSHOT-jar-with-dependencies.jar" />
       <item itemvalue="JAR Application.Calendar-1.0-SNAPSHOT.jar" />
       <item itemvalue="JAR Application.Client-1.0-SNAPSHOT.jar" />
-      <item itemvalue="Maven.Calendar" />
       <item itemvalue="Maven.Calendar [package]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.Calendar-1.0-SNAPSHOT-jar-with-dependencies.jar" />
         <item itemvalue="Maven.Calendar [package]" />
         <item itemvalue="JAR Application.Calendar-1.0-SNAPSHOT.jar" />
-        <item itemvalue="JAR Application.Calendar-1.0-SNAPSHOT-jar-with-dependencies.jar" />
         <item itemvalue="JAR Application.Client-1.0-SNAPSHOT.jar" />
       </list>
     </recent_temporary>
@@ -133,6 +128,7 @@
       <updated>1682964497012</updated>
       <workItem from="1682964499257" duration="15931000" />
       <workItem from="1683007121411" duration="1390000" />
+      <workItem from="1683034704932" duration="6248000" />
     </task>
     <servers />
   </component>

@@ -6,15 +6,16 @@
  */
 package com.adalyia.calendar;
 
-import java.lang.reflect.Array;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Event implements EventInterface, Comparable<Event>
 {
     // Instance variables
+    private final UUID id;
     private String title;
     private String description;
     private String location;
@@ -44,6 +45,19 @@ public class Event implements EventInterface, Comparable<Event>
         this.end = end;
         this.created = LocalDateTime.now();
         this.modified = this.created;
+        this.id = UUID.randomUUID();
+        this.auditLog = new ArrayList<>();
+        this.tags = new ArrayList<>();
+    }
+
+    /**
+     * Returns the unique ID of the calendar.
+     *
+     * @return the unique ID of the calendar
+     */
+    public UUID getId()
+    {
+        return this.id;
     }
 
     /**
@@ -300,8 +314,7 @@ public class Event implements EventInterface, Comparable<Event>
     @Override
     public String toString()
     {
-        return String.format("Title: %s\nDescription: %s\nLocation: %s\nStart: %s\nEnd: %s\nCreated: %s\nModified: %s\nDuration: %s\nReminder: %s\n",
-            this.title, this.description, this.location, this.start, this.end, this.created, this.modified, this.getDuration(), this.getReminder());
+        return String.format("{\n\ttitle: %s,\n\tdescription: %s,\n\tlocation: %s,\n\tstart: %s,\n\tend: %s,\n\tcreated: %s,\n\tmodified: %s,\n\tduration: %s,\n\treminder: %s,\n\ttags: %s,\n\tauditLog: %s\n}", this.title, this.description, this.location, this.start.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")), this.end.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")), this.created.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")), this.modified.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")), this.getDuration().toString(), this.getReminder().toString(), this.tags.toString(), this.auditLog.toString());
     }
 
     /**

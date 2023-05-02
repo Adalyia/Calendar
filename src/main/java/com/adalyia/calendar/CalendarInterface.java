@@ -8,10 +8,12 @@ package com.adalyia.calendar;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public interface CalendarInterface
 {
     // Getters for Calendar properties
+    UUID getId();
     String getName();
     String getDescription();
     LocalDateTime getCreated();

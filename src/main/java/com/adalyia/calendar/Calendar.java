@@ -7,12 +7,16 @@
 package com.adalyia.calendar;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.UUID;
 
 public class Calendar implements CalendarInterface
 {
     // Instance variables
+
+    private final UUID id;
     private String name;
     private String description;
     private final LocalDateTime created;
@@ -31,9 +35,20 @@ public class Calendar implements CalendarInterface
         this.name = name;
         this.description = description;
         this.created = LocalDateTime.now();
-        this.modified = LocalDateTime.now();
+        this.modified = this.created;
         this.events = new ArrayList<>();
         this.tags = new ArrayList<>();
+        this.id = UUID.randomUUID();
+    }
+
+    /**
+     * Returns the unique ID of the calendar.
+     *
+     * @return the unique ID of the calendar
+     */
+    public UUID getId()
+    {
+        return this.id;
     }
 
     /**
@@ -186,7 +201,7 @@ public class Calendar implements CalendarInterface
      */
     @Override
     public String toString() {
-        return String.format("Name: %s\nDescription: %s\nCreated: %s\nModified: %s\nEvents: %s\nTags: %s",
-                this.name, this.description, this.created, this.modified, this.events, this.tags);
+        return String.format("{id: %s, name: %s, description: %s, created: %s, modified: %s, events: %s, tags: %s}",
+                this.id, this.name, this.description, this.created.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME), this.modified.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME), this.events, this.tags);
     }
 }

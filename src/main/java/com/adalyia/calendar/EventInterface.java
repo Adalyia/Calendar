@@ -9,10 +9,12 @@ package com.adalyia.calendar;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public interface EventInterface
 {
     // Getters for Calendar Task/Event properties
+    UUID getId();
     String getTitle();
     String getDescription();
     String getLocation();

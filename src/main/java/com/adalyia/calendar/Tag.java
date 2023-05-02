@@ -7,10 +7,13 @@
 package com.adalyia.calendar;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.UUID;
 
 public class Tag implements TagInterface
 {
     // Instance variables
+    private final UUID id;
     private String name;
     private String description;
     private final LocalDateTime created;
@@ -29,6 +32,17 @@ public class Tag implements TagInterface
         this.description = description;
         this.created = LocalDateTime.now();
         this.modified = this.created;
+        this.id = UUID.randomUUID();
+    }
+
+    /**
+     * Returns the unique ID of the calendar.
+     *
+     * @return the unique ID of the calendar
+     */
+    public UUID getId()
+    {
+        return this.id;
     }
 
     /**
@@ -107,8 +121,12 @@ public class Tag implements TagInterface
     @Override
     public String toString()
     {
-        return String.format("Tag: %s\nDescription: %s\nCreated: %s\nModified: %s\n",
-                this.name, this.description, this.created, this.modified);
+        return String.format("{\n\tid: %s,\n\tname: %s,\n\tdescription: %s,\n\tcreated: %s,\n\tmodified: %s\n}",
+                this.id,
+                this.name,
+                this.description,
+                this.created.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")),
+                this.modified.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
     }
 
     /**

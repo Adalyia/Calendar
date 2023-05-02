@@ -48,36 +48,47 @@ public class Client
         System.out.println("3. Add a tag");
         System.out.println("4. View tasks/events");
         System.out.println("5. View tags");
+        System.out.println("6. Exit");
 
-        System.out.print("Enter the number of the option you would like to select: ");
-        String input = scanner.nextLine();
+        String input = Integer.toString(promptInt("Enter the number of the option you would like to select: "));
 
-        switch (Integer.parseInt(input)) {
-            case 1:
+        switch (Integer.parseInt(input))
+        {
+            case 1 ->
+            {
                 // Add a task
                 calendar.addEvent(taskPrompt());
-                break;
-            case 2:
+            }
+            case 2 ->
+            {
                 // Add an event
                 calendar.addEvent(eventPrompt());
-                break;
-            case 3:
+            }
+            case 3 ->
+            {
                 // Add a tag
                 ArrayList<TagInterface> tags = calendar.getTags();
                 tags.add(tagPrompt());
                 calendar.setTags(tags);
-                break;
-            case 4:
+            }
+            case 4 ->
+            {
                 // View tasks/events
                 System.out.println(calendar.getEvents());
-                break;
-            case 5:
-                // View tags
-                System.out.println(calendar.getTags());
-                break;
-            default:
+            }
+            case 5 -> System.out.println(calendar.getTags());
+            case 6 ->
+            {
+                // Exit
+                System.out.println("Goodbye!");
+                System.exit(0);
+            }
+
+            default ->
+            {
                 System.out.println("Invalid input. Please try again.");
                 optionsMenu(calendar);
+            }
         }
     }
 
@@ -90,7 +101,7 @@ public class Client
         String description = scanner.nextLine();
         System.out.print("Enter the location for this task: ");
         String location = scanner.nextLine();
-        System.out.print("Enter the due date for this task: ");
+        System.out.print("Enter the due date for this task below ");
         LocalDateTime dueDate = dateTimePrompt();
         return new Task(name, description, location, dueDate);
     }
@@ -104,9 +115,9 @@ public class Client
         String description = scanner.nextLine();
         System.out.print("Enter the location for this event: ");
         String location = scanner.nextLine();
-        System.out.print("Enter the start time for the event: ");
+        System.out.print("Enter the start time for the event below ");
         LocalDateTime start = dateTimePrompt();
-        System.out.print("Enter the end time for the event: ");
+        System.out.print("Enter the end time for the event below ");
         LocalDateTime end = dateTimePrompt();
         return new Event(name, description, location, start, end);
     }
@@ -123,16 +134,23 @@ public class Client
 
     public static LocalDateTime dateTimePrompt()
     {
-        System.out.print("Enter the year: ");
-        int year = Integer.parseInt(scanner.nextLine());
-        System.out.print("Enter the month: ");
-        int month = Integer.parseInt(scanner.nextLine());
-        System.out.print("Enter the day: ");
-        int day = Integer.parseInt(scanner.nextLine());
-        System.out.print("Enter the hour: ");
-        int hour = Integer.parseInt(scanner.nextLine());
-        System.out.print("Enter the minute: ");
-        int minute = Integer.parseInt(scanner.nextLine());
+        System.out.println();
+        int year = promptInt("\tEnter the year (whole number): ");
+        int month = promptInt("\tEnter the month (whole number): ");
+        int day = promptInt("\tEnter the day (whole number): ");
+        int hour = promptInt("\tEnter the hour (whole number): ");
+        int minute = promptInt("\tEnter the minute (whole number): ");
         return LocalDateTime.of(year, month, day, hour, minute);
+    }
+
+    public static int promptInt(String prompt)
+    {
+        System.out.print(prompt);
+        try {
+            return Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Input must be a number. Please try again.");
+            return promptInt(prompt);
+        }
     }
 }
